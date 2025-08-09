@@ -1,44 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- PRELOADER ---
+    // --- SMOOTH PRELOADER ---
     const preloader = document.querySelector('.preloader');
     window.addEventListener('load', () => {
-        preloader.style.opacity = '0';
         setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
+            preloader.classList.add('hidden');
+        }, 2000); // Keep preloader for 2 seconds
+    });
+
+    // --- HEADER SCROLL EFFECT ---
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 
     // --- MOBILE MENU ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
-        mobileMenuButton.querySelector('i').classList.toggle('fa-bars');
-        mobileMenuButton.querySelector('i').classList.toggle('fa-times');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
     });
 
-    mobileMenuLinks.forEach(link => {
+    // Close mobile menu when a link is clicked
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            mobileMenuButton.querySelector('i').classList.add('fa-bars');
-            mobileMenuButton.querySelector('i').classList.remove('fa-times');
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
         });
     });
 
     // --- TYPING EFFECT ---
     if (document.querySelector('.typing-effect')) {
         new Typed('.typing-effect', {
-            strings: ['Cybersecurity Enthusiast', 'Defense Sector Aspirant', 'Future Innovator'],
-            typeSpeed: 70,
-            backSpeed: 50,
-            loop: true
+            strings: ['Cybersecurity Analyst', 'Defense Strategist', 'Digital Protector'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            smartBackspace: true
         });
     }
 
-    // --- SCROLL ANIMATIONS ---
+    // --- SCROLL-TRIGGERED ANIMATIONS ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -48,31 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.15
     });
 
-    scrollElements.forEach(el => {
-        observer.observe(el);
-    });
-
-    // --- PARTICLES.JS BACKGROUND ---
-    particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#0d9488" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": true },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#0d9488", "opacity": 0.4, "width": 1 },
-            "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-            "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
-        },
-        "retina_detect": true
-    });
+    scrollElements.forEach(el => observer.observe(el));
 
     // --- CONTACT FORM SUBMISSION ---
     const contactForm = document.getElementById('contact-form');
@@ -80,9 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // --- IMPORTANT ---
-        // 1. Create a Google Form with fields for "Name", "Email", and "Message".
-        // 2. Get the pre-filled link for your form.
-        // 3. Replace the placeholder URL below with your Google Form's pre-filled link.
+        // Replace with your actual Google Form pre-filled link.
         const googleFormUrl = "YOUR_GOOGLE_FORM_PREFILLED_LINK_HERE";
 
         const name = document.getElementById('name').value;
@@ -90,23 +82,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.getElementById('message').value;
 
         // --- IMPORTANT ---
-        // Replace these with the correct entry IDs from your pre-filled link.
+        // Replace with the correct entry IDs from your pre-filled link.
         const nameEntryId = "entry.XXXXXXXXXX"; 
         const emailEntryId = "entry.YYYYYYYYYY";
         const messageEntryId = "entry.ZZZZZZZZZZ";
 
         if (googleFormUrl === "YOUR_GOOGLE_FORM_PREFILLED_LINK_HERE") {
-             alert("Please update the script.js file with your Google Form link and entry IDs.");
+             alert("Developer: Please update the script.js file with your Google Form link and entry IDs.");
              return;
         }
 
         const finalUrl = `${googleFormUrl.split('?')[0]}?usp=pp_url&${nameEntryId}=${encodeURIComponent(name)}&${emailEntryId}=${encodeURIComponent(email)}&${messageEntryId}=${encodeURIComponent(message)}`;
 
-        // We can submit this in the background, but opening a new tab is simpler and ensures the user knows it went through.
         window.open(finalUrl, '_blank');
-
-        alert("Thank you! Your message has been submitted.");
+        alert("Thank you! Your message has been submitted via Google Forms.");
         contactForm.reset();
     });
-
 });

@@ -1,155 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahadev Rajkumar Swami - Personal Portfolio</title>
-    <!-- Link to your new CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <title>Mahadev Rajkumar Swami - Cyber & Defense Analyst</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Preloader/Loading Animation -->
+    <!-- Video Preloader -->
     <div class="preloader">
-        <div class="loader"></div>
+        <img src="sm.png" alt="Logo" class="preloader-logo">
     </div>
 
-    <!-- Particle background container -->
-    <div id="particles-js"></div>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="sm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <!-- Header -->
     <header class="header">
         <div class="container flex-between">
-            <a href="#home" class="logo">Mahadev Rajkumar Swami</a>
+            <a href="#home" class="logo">Mahadev R. Swami</a>
             <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="mobile-menu-button">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <div id="mobile-menu" class="mobile-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </header>
 
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="section">
-            <div class="container home-content">
-                <img src="https://placehold.co/150x150/0d9488/ffffff?text=MS" alt="Mahadev Rajkumar Swami" class="home-img animate-on-scroll">
-                <h1 class="home-title animate-on-scroll">
-                    Hi, I'm Mahadev Rajkumar Swami
-                </h1>
-                <p class="home-subtitle animate-on-scroll">I'm a <span class="typing-effect"></span></p>
-                <div class="social-links animate-on-scroll">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-                <a href="#contact" class="btn animate-on-scroll">Get In Touch</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container about-content">
-                <h2 class="section-title animate-on-scroll">About Me</h2>
-                <div class="about-flex">
-                    <div class="about-image animate-on-scroll">
-                        <img src="https://placehold.co/600x400/0f172a/ffffff?text=About+Me" alt="About me">
-                    </div>
-                    <div class="about-text animate-on-scroll">
-                        <h3>Passionate Learner & Future Innovator</h3>
-                        <p>
-                            Hello! I'm Mahadev Rajkumar Swami, based in Pune, India. I have a deep interest in the fields of cybersecurity and the defense sector. I'm driven by the challenge of protecting digital assets and understanding the strategies that keep nations secure.
+    <div class="content-wrapper">
+        <main>
+            <!-- Home Section -->
+            <section id="home" class="section home-section">
+                <div class="container text-center">
+                    <div class="hero-box">
+                        <img src="sm.png" alt="Mahadev Rajkumar Swami" class="home-img fade-in">
+                        <h1 class="home-title fade-in-up">Mahadev Rajkumar Swami</h1>
+                        <p class="home-subtitle fade-in-up">
+                            <span class="typing-effect"></span>
                         </p>
-                        <p>
-                            I'm always eager to learn new things and apply my knowledge to real-world problems. This website is my digital space to share my journey, skills, and projects. Feel free to look around and get in touch!
-                        </p>
+                        <div class="social-links fade-in-up">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <a href="#projects" class="btn fade-in-up">View My Work</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">My Skills</h2>
-                <div class="skills-grid">
-                    <!-- Skill 1 -->
-                    <div class="skill-card animate-on-scroll">
-                        <i class="fas fa-shield-halved"></i>
-                        <h3>Cyber Security</h3>
-                        <p>Network Security, Ethical Hacking, Threat Analysis.</p>
-                    </div>
-                    <!-- Skill 2 -->
-                    <div class="skill-card animate-on-scroll">
-                        <i class="fas fa-code"></i>
-                        <h3>Web Development</h3>
-                        <p>HTML, CSS, JavaScript.</p>
-                    </div>
-                    <!-- Skill 3 -->
-                    <div class="skill-card animate-on-scroll">
-                        <i class="fas fa-flag"></i>
-                        <h3>Strategic Analysis</h3>
-                        <p>Geopolitical Research, Defense Studies.</p>
-                    </div>
-                    <!-- Skill 4 -->
-                    <div class="skill-card animate-on-scroll">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Problem Solving</h3>
-                        <p>Critical Thinking, Analytical Skills.</p>
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">About Me</h2>
+                    <div class="about-content">
+                        <div class="about-image animate-on-scroll">
+                            <img src="https://placehold.co/600x600/0f172a/ffffff?text=Mahadev" alt="About Mahadev">
+                        </div>
+                        <div class="about-text animate-on-scroll">
+                            <h3>Cybersecurity & Defense Strategist</h3>
+                            <p>
+                                Based in Pune, India, I am deeply passionate about the intersection of national security and technology. My focus lies in cybersecurity and strategic defense analysis, where I apply a rigorous and analytical approach to complex challenges.
+                            </p>
+                            <p>
+                                I am dedicated to continuous learning and am driven to develop innovative solutions that safeguard digital infrastructures and contribute to a more secure future. This portfolio is a showcase of my journey, skills, and the projects that define my mission.
+                            </p>
+                            <a href="#contact" class="btn">Get In Touch</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">Contact Me</h2>
-                <div class="contact-form-container animate-on-scroll">
-                    <p>
-                        Have a question or want to work together? Fill out the form below.
-                    </p>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">Name</label>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">My Projects</h2>
+                    <div class="projects-grid">
+                        <!-- Project 1 -->
+                        <div class="project-card animate-on-scroll">
+                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+One" alt="Project One">
+                            <div class="project-info">
+                                <h3>Threat Analysis Platform</h3>
+                                <p>A conceptual platform for real-time cyber threat intelligence aggregation and visualization.</p>
+                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Email</label>
+                        <!-- Project 2 -->
+                        <div class="project-card animate-on-scroll">
+                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+Two" alt="Project Two">
+                            <div class="project-info">
+                                <h3>Secure Network Simulation</h3>
+                                <p>A simulated environment to test and validate network security protocols against common attack vectors.</p>
+                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                            <label for="message">Message</label>
+                        <!-- Project 3 -->
+                        <div class="project-card animate-on-scroll">
+                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+Three" alt="Project Three">
+                            <div class="project-info">
+                                <h3>Geopolitical Conflict Analysis</h3>
+                                <p>An open-source intelligence (OSINT) project analyzing digital flashpoints in modern conflicts.</p>
+                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Mahadev Rajkumar Swami. All Rights Reserved.</p>
-    </footer>
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">Core Competencies</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-shield-virus"></i><h3>Threat Intelligence</h3></div>
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-network-wired"></i><h3>Network Security</h3></div>
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-user-secret"></i><h3>Ethical Hacking</h3></div>
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-chess-knight"></i><h3>Strategic Analysis</h3></div>
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-file-alt"></i><h3>OSINT</h3></div>
+                        <div class="skill-card animate-on-scroll"><i class="fas fa-cogs"></i><h3>Problem Solving</h3></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">Contact Me</h2>
+                    <div class="contact-form-container animate-on-scroll">
+                        <p>I'm available for collaboration and new opportunities. Let's connect.</p>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Mahadev Rajkumar Swami. All Rights Reserved.</p>
+        </footer>
+    </div>
     
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- Link to your new JS file -->
     <script src="script.js"></script>
 </body>
 </html>
