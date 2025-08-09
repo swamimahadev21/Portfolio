@@ -7,20 +7,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Exo+2:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Source+Code+Pro:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Intro Animation -->
-    <div class="intro-overlay">
-        <div class="intro-logo">
-            <img src="sm21.png" alt="SM 21 Logo">
-        </div>
-    </div>
 
     <!-- Background Effects -->
     <div id="particles-js"></div>
@@ -36,6 +29,7 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#journey" class="nav-link">Journey</a>
+                <a href="#certifications" class="nav-link">Certs</a>
                 <a href="#inspiration" class="nav-link">Inspiration</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
@@ -54,7 +48,6 @@
                     <p class="hero-subheadline">Forging a path at the intersection of digital defense and national security.</p>
                     <a href="#projects" class="btn">Explore My Work <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="radar-sweep"></div>
             </section>
 
             <!-- About Me Section -->
@@ -100,7 +93,7 @@
                         <div class="skill-category">
                             <h3>Discipline & Fitness</h3>
                             <ul>
-                                <li><i class="fas fa-flag"></i> NCC Certified</li>
+                                <li><i class="fas fa-shield-halved"></i> Self-Discipline</li>
                                 <li><i class="fas fa-running"></i> Endurance Training</li>
                                 <li><i class="fas fa-fist-raised"></i> Unarmed Combat</li>
                                 <li><i class="fas fa-users"></i> Leadership</li>
@@ -117,19 +110,9 @@
                      <div class="projects-grid">
                         <!-- Project 1 -->
                         <div class="project-card">
-                            <div class="project-image" style="background-image: url('https://placehold.co/600x400/020617/2dd4bf?text=Threat+Intel')"></div>
-                            <div class="project-content">
-                                <h3>Threat Intel Dashboard</h3>
-                                <p>A real-time dashboard visualizing global cyber threats using open-source intelligence feeds.</p>
-                                <div class="project-tags"><span>Python</span><span>API</span><span>Data Viz</span></div>
-                                <div class="project-links"><a href="https://github.com/swamimahadev21" target="_blank"><i class="fab fa-github"></i> View Code</a></div>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="project-card">
                             <div class="project-image" style="background-image: url('https://placehold.co/600x400/020617/2dd4bf?text=Secure+Comms')"></div>
                             <div class="project-content">
-                                <h3>Secure Timed Communication System</h3>
+                                <h3>Secure Defence Communication</h3>
                                 <p>A system that encrypts messages, holds them for a set duration, then transforms them into disguised text for covert transmission.</p>
                                 <div class="project-tags"><span>AES-256</span><span>Steganography</span><span>Security</span></div>
                                 <div class="project-links"><a href="https://github.com/swamimahadev21" target="_blank"><i class="fab fa-github"></i> View Code</a></div>
@@ -145,62 +128,72 @@
                 <div class="container">
                     <h2 class="section-title"><span>04.</span>My Journey</h2>
                     <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2019</div>
+                        <div class="timeline-item left">
                             <div class="timeline-content">
                                 <h3>Dual-Front Preparation</h3>
                                 <p>Began preparation for the Armed Forces while simultaneously developing a keen interest in cybersecurity.</p>
+                                <span class="timeline-date">2019</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2020</div>
+                        <div class="timeline-item right">
                             <div class="timeline-content">
                                 <h3>Focused Aspirations</h3>
                                 <p>Intensified focus on Armed Forces entry paths and explored various avenues for service.</p>
+                                <span class="timeline-date">2020</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2021</div>
+                        <div class="timeline-item left">
                             <div class="timeline-content">
                                 <h3>Formal Defence Training</h3>
                                 <p>Joined the Defence Career Academy in Aurangabad to gain specialized defence knowledge.</p>
+                                <span class="timeline-date">2021</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2022</div>
+                        <div class="timeline-item right">
                             <div class="timeline-content">
                                 <h3>Deep Dive into Cyber</h3>
                                 <p>Started systematically gathering in-depth knowledge in various cybersecurity domains.</p>
+                                <span class="timeline-date">2022</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2023</div>
+                        <div class="timeline-item left">
                             <div class="timeline-content">
                                 <h3>Graduated DCA</h3>
                                 <p>Successfully passed out from the Defence Career Academy, equipped with foundational defence training.</p>
+                                <span class="timeline-date">2023</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2024</div>
-                            <div class="timeline-content">
+                        <div class="timeline-item right">
+                             <div class="timeline-content">
                                 <h3>NDA Written Success</h3>
                                 <p>Cracked the prestigious NDA written examination, but was screened out in the subsequent stages.</p>
+                                <span class="timeline-date">2024</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">Present</div>
+                        <div class="timeline-item left">
                             <div class="timeline-content">
                                 <h3>Engineering & Application</h3>
                                 <p>Currently in the third year of B.E. (Information Technology) and developing a Secure Defence Communication project.</p>
+                                <span class="timeline-date">Present</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Certifications Section -->
+            <section id="certifications" class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>05.</span>Certifications</h2>
+                    <div class="certificate-grid">
+                        <!-- Add your certificate images here -->
+                        <div class="certificate-card">
+                            <img src="https://placehold.co/600x400/0a192f/2dd4bf?text=Certificate+1" alt="Certificate 1">
+                        </div>
+                        <div class="certificate-card">
+                            <img src="https://placehold.co/600x400/0a192f/2dd4bf?text=Certificate+2" alt="Certificate 2">
+                        </div>
+                        <!-- Add more as needed -->
                     </div>
                 </div>
             </section>
@@ -208,14 +201,14 @@
             <!-- Military Inspiration Section -->
             <section id="inspiration" class="section">
                  <div class="container text-center">
-                     <h2 class="section-title"><span>05.</span>Inspiration</h2>
+                     <h2 class="section-title"><span>06.</span>Inspiration</h2>
                      <div class="inspiration-content">
                         <div class="quote-container">
                             <p class="quote">"स्वराज्य तोरण चढे, गर्जतो मराठी बाणा!"</p>
                             <cite>- Chhatrapati Shivaji Maharaj (Implicit)</cite>
                         </div>
                         <div class="inspiration-visuals">
-                             <img src="https://placehold.co/300x200/0f172a/ffffff?text=Indian+Navy" alt="Indian Navy Silhouette">
+                             <img src="shiva.png" alt="Chhatrapati Shivaji Maharaj">
                              <p>My motivation is drawn from the valor of our history and the dedication of the Indian Armed Forces. It is my solemn ambition to serve the nation with honor and integrity.</p>
                         </div>
                      </div>
@@ -225,10 +218,10 @@
             <!-- Contact Section -->
             <section id="contact" class="section">
                 <div class="container text-center">
-                    <h2 class="section-title"><span>06.</span>Contact</h2>
+                    <h2 class="section-title"><span>07.</span>Contact</h2>
                     <p class="contact-subtitle">Let's connect. I'm open to collaboration and new opportunities.</p>
                     <div class="contact-links">
-                        <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                        <a href="mailto:swamimahadev2110@gmail.com" class="btn">swamimahadev2110@gmail.com</a>
                     </div>
                     <div class="social-links-footer">
                         <a href="https://www.linkedin.com/in/swamimahadev21" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
