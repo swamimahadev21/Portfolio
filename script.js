@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- SMOOTH PRELOADER ---
-    const preloader = document.querySelector('.preloader');
+    // --- SITE INTRO SEQUENCE ---
+    const introVideo = document.getElementById('intro-video');
+
+    // When the intro video has finished playing, reveal the main site.
+    introVideo.addEventListener('ended', () => {
+        document.body.classList.add('site-loaded');
+    });
+    
+    // Fallback for browsers that might not fire the 'ended' event properly
+    // or if the video is very short.
     window.addEventListener('load', () => {
         setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 2000); // Keep preloader for 2 seconds
+            if (!document.body.classList.contains('site-loaded')) {
+                document.body.classList.add('site-loaded');
+            }
+        }, 10000); // Force show site after 10 seconds max
     });
 
     // --- HEADER SCROLL EFFECT ---
