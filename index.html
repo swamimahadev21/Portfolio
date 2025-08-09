@@ -15,44 +15,45 @@
 </head>
 <body>
 
-    <!-- Video Preloader -->
+    <!-- Step 1: Preloader with logo -->
     <div class="preloader">
         <img src="sm.png" alt="Logo" class="preloader-logo">
     </div>
 
-    <!-- Video Background -->
-    <div class="video-background">
-        <video autoplay muted loop playsinline id="bg-video">
+    <!-- Step 2: Fullscreen Intro Video -->
+    <div class="video-intro-background">
+        <video autoplay muted playsinline id="intro-video">
             <source src="sm.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container flex-between">
-            <a href="#home" class="logo">Mahadev R. Swami</a>
-            <nav class="navbar">
+    <!-- Step 3: Main site content (initially hidden) -->
+    <div class="site-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="container flex-between">
+                <a href="#home" class="logo">Mahadev R. Swami</a>
+                <nav class="navbar">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-            <button id="mobile-menu-button" class="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <div class="content-wrapper">
         <main>
             <!-- Home Section -->
             <section id="home" class="section home-section">
