@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- SITE INTRO SEQUENCE ---
-    const introVideo = document.getElementById('intro-video');
-
-    // When the intro video has finished playing, reveal the main site.
-    introVideo.addEventListener('ended', () => {
-        document.body.classList.add('site-loaded');
-    });
-    
-    // Fallback for browsers that might not fire the 'ended' event properly
-    // or if the video is very short.
+    // --- INTRO ANIMATION ---
+    const introOverlay = document.querySelector('.intro-overlay');
     window.addEventListener('load', () => {
         setTimeout(() => {
-            if (!document.body.classList.contains('site-loaded')) {
-                document.body.classList.add('site-loaded');
-            }
-        }, 10000); // Force show site after 10 seconds max
+            introOverlay.classList.add('hidden');
+        }, 3000); // Hide intro after 3 seconds
+    });
+
+    // --- PARTICLES.JS BACKGROUND ---
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00f7ff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5, "random": true },
+            "size": { "value": 2, "random": true },
+            "line_linked": { "enable": true, "distance": 150, "color": "#00f7ff", "opacity": 0.1, "width": 1 },
+            "move": { "enable": true, "speed": 1, "direction": "none", "out_mode": "out" }
+        },
+        "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
+        "retina_detect": true
     });
 
     // --- HEADER SCROLL EFFECT ---
@@ -28,84 +33,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- MOBILE MENU ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        const icon = mobileMenuButton.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    // Close mobile menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                const icon = mobileMenuButton.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
-        });
-    });
-
-    // --- TYPING EFFECT ---
-    if (document.querySelector('.typing-effect')) {
-        new Typed('.typing-effect', {
-            strings: ['Cybersecurity Analyst', 'Defense Strategist', 'Digital Protector'],
-            typeSpeed: 60,
-            backSpeed: 40,
-            loop: true,
-            smartBackspace: true
-        });
-    }
-
     // --- SCROLL-TRIGGERED ANIMATIONS ---
-    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+    const scrollElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .about-text, .about-image');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15
+    }, { threshold: 0.1 });
+    scrollElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
     });
 
-    scrollElements.forEach(el => observer.observe(el));
-
-    // --- CONTACT FORM SUBMISSION ---
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // --- IMPORTANT ---
-        // Replace with your actual Google Form pre-filled link.
-        const googleFormUrl = "YOUR_GOOGLE_FORM_PREFILLED_LINK_HERE";
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // --- IMPORTANT ---
-        // Replace with the correct entry IDs from your pre-filled link.
-        const nameEntryId = "entry.XXXXXXXXXX"; 
-        const emailEntryId = "entry.YYYYYYYYYY";
-        const messageEntryId = "entry.ZZZZZZZZZZ";
-
-        if (googleFormUrl === "YOUR_GOOGLE_FORM_PREFILLED_LINK_HERE") {
-             alert("Developer: Please update the script.js file with your Google Form link and entry IDs.");
-             return;
-        }
-
-        const finalUrl = `${googleFormUrl.split('?')[0]}?usp=pp_url&${nameEntryId}=${encodeURIComponent(name)}&${emailEntryId}=${encodeURIComponent(email)}&${messageEntryId}=${encodeURIComponent(message)}`;
-
-        window.open(finalUrl, '_blank');
-        alert("Thank you! Your message has been submitted via Google Forms.");
-        contactForm.reset();
+    // --- MOBILE MENU ---
+    // (Keep existing mobile menu logic here)
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const navbar = document.querySelector('.navbar');
+    mobileMenuButton.addEventListener('click', () => {
+        navbar.classList.toggle('active');
     });
+
 });
