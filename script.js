@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- TYPING EFFECT ---
     if (document.querySelector('.typing-effect')) {
         new Typed('.typing-effect', {
-            strings: ['Passionate Developer', 'Cybersecurity Enthusiast', 'Future Leader'],
+            strings: ['Cybersecurity Enthusiast', 'Defense Sector Aspirant', 'Future Innovator'],
             typeSpeed: 70,
             backSpeed: 50,
             loop: true
