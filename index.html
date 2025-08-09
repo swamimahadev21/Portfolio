@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahadev Rajkumar Swami - Cyber & Defense Analyst</title>
+    <title>Mahadev "SM 21" Swami - Cybersecurity & Defense Aspirant</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Exo+2:wght@700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Link to your CSS file -->
@@ -15,77 +15,96 @@
 </head>
 <body>
 
-    <!-- Step 1: Fullscreen Intro Video -->
-    <div class="video-intro-background">
-        <video autoplay muted playsinline id="intro-video">
-            <source src="sm.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- Intro Animation -->
+    <div class="intro-overlay">
+        <div class="intro-logo">
+            <img src="sm21.png" alt="SM 21 Logo">
+        </div>
     </div>
 
-    <!-- Step 2: Main site content (initially hidden) -->
-    <div class="site-content">
-        <!-- Header -->
-        <header class="header">
-            <div class="container flex-between">
-                <a href="#home" class="logo">Mahadev R. Swami</a>
-                <nav class="navbar">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-                <button id="mobile-menu-button" class="mobile-menu-button">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div id="mobile-menu" class="mobile-menu">
+    <!-- Background Effects -->
+    <div id="particles-js"></div>
+    <div class="background-grid"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex-between">
+            <a href="#home" class="logo">SM 21</a>
+            <nav class="navbar">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#inspiration" class="nav-link">Inspiration</a>
                 <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </header>
+            </nav>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
+    <div class="site-content">
         <main>
-            <!-- Home Section -->
-            <section id="home" class="section home-section">
-                <div class="container text-center">
-                    <div class="hero-box">
-                        <img src="sm.png" alt="Mahadev Rajkumar Swami" class="home-img fade-in">
-                        <h1 class="home-title fade-in-up">Mahadev Rajkumar Swami</h1>
-                        <p class="home-subtitle fade-in-up">
-                            <span class="typing-effect"></span>
-                        </p>
-                        <div class="social-links fade-in-up">
-                            <a href="https://www.linkedin.com/in/swamimahadev21" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/swamimahadev21" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://www.instagram.com/swamimahadev21" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <!-- Hero Section -->
+            <section id="home" class="section hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-headline">Cybersecurity Enthusiast <span>|</span> Armed Forces Aspirant</h1>
+                    <p class="hero-subheadline">Forging a path at the intersection of digital defense and national security.</p>
+                    <a href="#projects" class="btn">Explore My Work <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="radar-sweep"></div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>01.</span>About Me</h2>
+                    <div class="about-content-grid">
+                        <div class="about-text">
+                            <h3>Mission-Driven Technologist</h3>
+                            <p>I am a dedicated and analytical individual from Pune, India, with a profound passion for both cybersecurity and the disciplined ethos of the Indian Armed Forces. My expertise lies in ethical hacking, cryptography, and network defense, driven by a mission to protect our nation's digital frontiers.</p>
+                            <p>My ambition is to leverage my technical skills in the service of my country, aspiring to contribute to the technological advancement and security of the Indian Navy through the CDS examination.</p>
                         </div>
-                        <a href="#projects" class="btn fade-in-up">View My Work</a>
+                        <div class="about-image">
+                            <img src="sm.png" alt="Mahadev Swami">
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- About Section -->
-            <section id="about" class="section">
+            <!-- Skills & Tools Section -->
+            <section id="skills" class="section">
                 <div class="container">
-                    <h2 class="section-title animate-on-scroll">About Me</h2>
-                    <div class="about-content">
-                        <div class="about-image animate-on-scroll">
-                            <img src="https://placehold.co/600x600/0f172a/ffffff?text=Mahadev" alt="About Mahadev">
+                    <h2 class="section-title"><span>02.</span>Skills & Arsenal</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Cybersecurity Tools</h3>
+                            <ul>
+                                <li><i class="fas fa-terminal"></i> Kali Linux</li>
+                                <li><i class="fas fa-wifi"></i> Wireshark</li>
+                                <li><i class="fas fa-spider"></i> Burp Suite</li>
+                                <li><i class="fas fa-skull-crossbones"></i> Metasploit</li>
+                            </ul>
                         </div>
-                        <div class="about-text animate-on-scroll">
-                            <h3>Cybersecurity & Defense Strategist</h3>
-                            <p>
-                                Based in Pune, India, I am deeply passionate about the intersection of national security and technology. My focus lies in cybersecurity and strategic defense analysis, where I apply a rigorous and analytical approach to complex challenges.
-                            </p>
-                            <p>
-                                I am dedicated to continuous learning and am driven to develop innovative solutions that safeguard digital infrastructures and contribute to a more secure future. This portfolio is a showcase of my journey, skills, and the projects that define my mission.
-                            </p>
-                            <a href="#contact" class="btn">Get In Touch</a>
+                        <div class="skill-category">
+                            <h3>Programming Languages</h3>
+                            <ul>
+                                <li><i class="fab fa-python"></i> Python</li>
+                                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                                <li><i class="fas fa-database"></i> SQL</li>
+                                <li><i class="fab fa-cuttlefish"></i> C++</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Discipline & Fitness</h3>
+                            <ul>
+                                <li><i class="fas fa-flag"></i> NCC Certified</li>
+                                <li><i class="fas fa-running"></i> Endurance Training</li>
+                                <li><i class="fas fa-fist-raised"></i> Unarmed Combat</li>
+                                <li><i class="fas fa-users"></i> Leadership</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -94,88 +113,106 @@
             <!-- Projects Section -->
             <section id="projects" class="section">
                 <div class="container">
-                    <h2 class="section-title animate-on-scroll">My Projects</h2>
-                    <div class="projects-grid">
+                     <h2 class="section-title"><span>03.</span>Field Projects</h2>
+                     <div class="projects-grid">
                         <!-- Project 1 -->
-                        <div class="project-card animate-on-scroll">
-                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+One" alt="Project One">
-                            <div class="project-info">
-                                <h3>Threat Analysis Platform</h3>
-                                <p>A conceptual platform for real-time cyber threat intelligence aggregation and visualization.</p>
-                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-card">
+                            <div class="project-image" style="background-image: url('https://placehold.co/600x400/020617/2dd4bf?text=Threat+Intel')"></div>
+                            <div class="project-content">
+                                <h3>Threat Intel Dashboard</h3>
+                                <p>A real-time dashboard visualizing global cyber threats using open-source intelligence feeds.</p>
+                                <div class="project-tags"><span>Python</span><span>API</span><span>Data Viz</span></div>
+                                <div class="project-links"><a href="https://github.com/swamimahadev21" target="_blank"><i class="fab fa-github"></i> View Code</a></div>
                             </div>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="project-card animate-on-scroll">
-                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+Two" alt="Project Two">
-                            <div class="project-info">
-                                <h3>Secure Network Simulation</h3>
-                                <p>A simulated environment to test and validate network security protocols against common attack vectors.</p>
-                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <!-- Add more projects here -->
+                     </div>
+                </div>
+            </section>
+
+            <!-- Journey & Aspirations Section -->
+            <section id="journey" class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>04.</span>My Journey</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2021</div>
+                            <div class="timeline-content">
+                                <h3>Started Cybersecurity Path</h3>
+                                <p>Began my focused learning journey into network security and ethical hacking fundamentals.</p>
                             </div>
                         </div>
-                        <!-- Project 3 -->
-                        <div class="project-card animate-on-scroll">
-                            <img src="https://placehold.co/600x400/0d9488/020617?text=Project+Three" alt="Project Three">
-                            <div class="project-info">
-                                <h3>Geopolitical Conflict Analysis</h3>
-                                <p>An open-source intelligence (OSINT) project analyzing digital flashpoints in modern conflicts.</p>
-                                <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2022</div>
+                            <div class="timeline-content">
+                                <h3>NCC 'B' Certificate</h3>
+                                <p>Completed the National Cadet Corps 'B' certification, instilling discipline and leadership.</p>
+                            </div>
+                        </div>
+                         <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h3>First Hackathon</h3>
+                                <p>Participated in a national-level CTF event, placing in the top 10% of competitors.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Present</div>
+                            <div class="timeline-content">
+                                <h3>Indian Navy / CDS Aspirant</h3>
+                                <p>Actively preparing for the CDS examination with the goal of joining the Indian Navy's technical branch.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Skills Section -->
-            <section id="skills" class="section">
-                <div class="container">
-                    <h2 class="section-title animate-on-scroll">Core Competencies</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-shield-virus"></i><h3>Threat Intelligence</h3></div>
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-network-wired"></i><h3>Network Security</h3></div>
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-user-secret"></i><h3>Ethical Hacking</h3></div>
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-chess-knight"></i><h3>Strategic Analysis</h3></div>
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-file-alt"></i><h3>OSINT</h3></div>
-                        <div class="skill-card animate-on-scroll"><i class="fas fa-cogs"></i><h3>Problem Solving</h3></div>
-                    </div>
-                </div>
+            <!-- Military Inspiration Section -->
+            <section id="inspiration" class="section">
+                 <div class="container text-center">
+                     <h2 class="section-title"><span>05.</span>Inspiration</h2>
+                     <div class="inspiration-content">
+                        <div class="quote-container">
+                            <p class="quote">"स्वराज्य तोरण चढे, गर्जतो मराठी बाणा!"</p>
+                            <cite>- Chhatrapati Shivaji Maharaj (Implicit)</cite>
+                        </div>
+                        <div class="inspiration-visuals">
+                             <img src="https://placehold.co/300x200/0f172a/ffffff?text=Indian+Navy" alt="Indian Navy Silhouette">
+                             <p>My motivation is drawn from the valor of our history and the dedication of the Indian Armed Forces. It is my solemn ambition to serve the nation with honor and integrity.</p>
+                        </div>
+                     </div>
+                 </div>
             </section>
 
             <!-- Contact Section -->
             <section id="contact" class="section">
-                <div class="container">
-                    <h2 class="section-title animate-on-scroll">Contact Me</h2>
-                    <div class="contact-form-container animate-on-scroll">
-                        <p>I'm available for collaboration and new opportunities. Let's connect.</p>
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">Your Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">Your Email</label>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="message" name="message" rows="4" required></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
+                <div class="container text-center">
+                    <h2 class="section-title"><span>06.</span>Contact</h2>
+                    <p class="contact-subtitle">Let's connect. I'm open to collaboration and new opportunities.</p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                    </div>
+                    <div class="social-links-footer">
+                        <a href="https://www.linkedin.com/in/swamimahadev21" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/swamimahadev21" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/swamimahadev21" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2025 Mahadev Rajkumar Swami. All Rights Reserved.</p>
+            <p>Designed & Built by Mahadev Rajkumar Swami</p>
+            <p>&copy; 2025. Jai Hind. 🇮🇳</p>
         </footer>
     </div>
     
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
