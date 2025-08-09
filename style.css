@@ -28,10 +28,38 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 
 /* --- HEADER & SITE CONTENT WRAPPER --- */
 .header, .site-content { position: relative; z-index: 2; }
-.header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; transition: all 0.4s ease; background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px); }
-.logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--electric-blue); text-decoration: none; }
-.navbar .nav-link { color: var(--text-light); text-decoration: none; margin-left: 2.5rem; font-family: var(--font-mono); transition: color 0.3s; }
-.navbar .nav-link:hover { color: var(--electric-blue); }
+.header { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 1.5rem 0; 
+    transition: all 0.4s ease; 
+    background: rgba(10, 25, 47, 0.85); 
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.15);
+}
+.logo { 
+    font-family: var(--font-heading); 
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    color: var(--electric-blue); 
+    text-decoration: none; 
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+}
+.navbar .nav-link { 
+    color: var(--text-light); 
+    text-decoration: none; 
+    margin-left: 2.5rem; 
+    font-family: var(--font-mono); 
+    transition: all 0.3s; 
+    text-shadow: 0 0 3px rgba(0, 247, 255, 0.5);
+}
+.navbar .nav-link:hover { 
+    color: var(--white); 
+    text-shadow: 0 0 5px var(--electric-blue), 0 0 10px var(--electric-blue);
+}
 
 /* --- HERO SECTION --- */
 .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -56,7 +84,7 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 .skill-category li i { color: var(--electric-blue); margin-right: 10px; }
 
 /* --- PROJECTS SECTION --- */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; justify-content: center; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1rem; justify-content: center; }
 .project-card { background: linear-gradient(145deg, #0d1f3a, #0a192f); border-radius: 4px; overflow: hidden; transition: transform 0.3s; }
 .project-card:hover { transform: translateY(-10px); }
 .project-image { height: 200px; background-size: cover; background-position: center; filter: saturate(0.5); }
@@ -68,13 +96,13 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 .project-links a { color: var(--saffron); text-decoration: none; font-weight: bold; }
 
 /* --- JOURNEY TIMELINE (ZIGZAG) --- */
-.timeline { position: relative; width: 100%; max-width: 800px; margin: 0 auto; padding: 15px 0; }
+.timeline { position: relative; width: 100%; max-width: 800px; margin: 0 auto; padding: 15px 0; overflow: hidden; }
 .timeline::before { content: ''; position: absolute; top: 0; left: 50%; width: 2px; height: 100%; background: rgba(0,247,255,0.2); transform: translateX(-50%); }
 .timeline-item { padding: 20px; margin-bottom: 40px; position: relative; width: calc(50% - 40px); }
 .timeline-item::after { content: ''; position: absolute; top: 20px; width: 20px; height: 20px; background: var(--saffron); border-radius: 50%; z-index: 1; border: 4px solid var(--navy); }
-.timeline-item.left { float: left; clear: right; text-align: right; }
+.timeline-item.left { float: left; clear: right; text-align: right; margin-left: 20px; }
 .timeline-item.left::after { right: -30px; }
-.timeline-item.right { float: right; clear: left; }
+.timeline-item.right { float: right; clear: left; margin-right: 20px; }
 .timeline-item.right::after { left: -30px; }
 .timeline-content { background: rgba(10, 25, 47, 0.7); padding: 20px; border-radius: 4px; border: 1px solid rgba(0,247,255,0.2); }
 .timeline-date { display: block; margin-top: 10px; font-family: var(--font-mono); font-weight: bold; color: var(--electric-blue); }
@@ -97,3 +125,15 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 /* --- FOOTER --- */
 .footer { text-align: center; padding: 2rem; font-family: var(--font-mono); color: var(--text-dark); }
 .footer p:first-child { margin-bottom: 0.5rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .navbar { display: none; }
+    .mobile-menu-button { display: block; background: none; border: none; color: var(--text-light); font-size: 1.8rem; cursor: pointer; }
+    .navbar.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--navy); }
+    .about-content-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 10px; }
+    .timeline-item { width: calc(100% - 50px); float: right; text-align: left; margin: 0; }
+    .timeline-item.left, .timeline-item.right { float: right; clear: both; }
+    .timeline-item::after { left: -20px; }
+}
