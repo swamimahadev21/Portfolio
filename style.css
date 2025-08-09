@@ -29,11 +29,14 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 @keyframes flicker { 0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px var(--electric-blue), 0 0 80px var(--electric-blue), 0 0 90px var(--electric-blue), 0 0 100px var(--electric-blue), 0 0 150px var(--electric-blue); opacity: 1; } 20%, 24%, 55% { text-shadow: none; opacity: 0.8; } }
 
 /* --- BACKGROUND EFFECTS --- */
+.video-background-layer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+#site-video { width: 100%; height: 100%; object-fit: cover; }
+.video-background-layer::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 25, 47, 0.75); }
 #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
-.background-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,247,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,247,255,0.05) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; }
 
-/* --- HEADER --- */
-.header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; z-index: 100; transition: all 0.4s ease; background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px); }
+/* --- HEADER & SITE CONTENT WRAPPER --- */
+.header, .site-content { position: relative; z-index: 2; }
+.header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 0; transition: all 0.4s ease; background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px); }
 .logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--electric-blue); text-decoration: none; }
 .navbar .nav-link { color: var(--text-light); text-decoration: none; margin-left: 2.5rem; font-family: var(--font-mono); transition: color 0.3s; }
 .navbar .nav-link:hover { color: var(--electric-blue); }
