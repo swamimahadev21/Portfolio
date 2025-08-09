@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- INTRO ANIMATION ---
-    const introOverlay = document.querySelector('.intro-overlay');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            introOverlay.classList.add('hidden');
-        }, 3000); // Hide intro after 3 seconds
-    });
-
     // --- PARTICLES.JS BACKGROUND ---
     particlesJS("particles-js", {
         "particles": {
@@ -34,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- SCROLL-TRIGGERED ANIMATIONS ---
-    const scrollElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .about-text, .about-image');
+    const scrollElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .about-text, .about-image, .certificate-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -52,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- MOBILE MENU ---
-    // (Keep existing mobile menu logic here)
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const navbar = document.querySelector('.navbar');
     mobileMenuButton.addEventListener('click', () => {
