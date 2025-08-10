@@ -106,6 +106,16 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 .about-image img { width: 100%; border-radius: 50%; border: 3px solid var(--electric-blue); filter: grayscale(50%); transition: filter 0.3s; }
 .about-image img:hover { filter: grayscale(0); }
 
+/* --- EDUCATION SECTION --- */
+.education-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.education-card { background: rgba(10, 25, 47, 0.7); border-left: 4px solid var(--electric-blue); padding: 2rem; border-radius: 4px; }
+.education-card h3 { font-family: var(--font-heading); color: var(--text-light); }
+.education-card h4 { color: var(--electric-blue); font-family: var(--font-mono); margin-bottom: 0.5rem; }
+.education-card .education-date { color: var(--text-dark); font-family: var(--font-mono); margin-bottom: 1rem; }
+.education-card ul { list-style-type: none; padding-left: 0; }
+.education-card li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+.education-card li::before { content: '»'; position: absolute; left: 0; color: var(--saffron); }
+
 /* --- SKILLS SECTION --- */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .skill-category { background: rgba(10, 25, 47, 0.7); border: 1px solid rgba(0,247,255,0.2); padding: 2rem; border-radius: 4px; }
