@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- SCROLL-TRIGGERED ANIMATIONS ---
-    const scrollElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .about-text, .about-image, .certificate-card');
+    const scrollElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .about-text, .about-image, .certificate-card, .inspiration-card, .book-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -46,8 +46,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- MOBILE MENU ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+
     mobileMenuButton.addEventListener('click', () => {
         navbar.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+            }
+        });
+    });
+
+    // --- MODAL LOGIC ---
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+    const interactiveCards = document.querySelectorAll('.interactive-card');
+
+    interactiveCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const contentSource = card.querySelector('.modal-content-source');
+            if (contentSource) {
+                modalBody.innerHTML = contentSource.innerHTML;
+                modal.classList.add('active');
+            }
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+    };
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
     });
 
 });
