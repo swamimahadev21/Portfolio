@@ -52,11 +52,22 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 
 .logo { 
     font-family: var(--font-heading); 
-    font-size: 1.8rem; 
-    font-weight: 900; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
     color: var(--electric-blue); 
     text-decoration: none; 
     text-shadow: 0 0 10px rgba(0, 247, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+.logo:hover .logo-img {
+    transform: rotate(-10deg);
 }
 .navbar .nav-link { 
     color: var(--text-light); 
