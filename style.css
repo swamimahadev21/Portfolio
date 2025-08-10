@@ -42,6 +42,13 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
     background: transparent;
     z-index: 100;
 }
+.header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+}
 .header.scrolled {
     padding: 1rem 0; /* Reduced padding on scroll */
     background: rgba(10, 25, 47, 0.85); 
@@ -63,7 +70,10 @@ body { background-color: var(--navy); color: var(--text-light); font-family: var
 }
 .logo-img {
     height: 40px;
-    width: auto;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--electric-blue);
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 .logo:hover .logo-img {
